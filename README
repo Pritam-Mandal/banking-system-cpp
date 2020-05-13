@@ -1,0 +1,42 @@
+The main purpose of the project is to create a Bank Transaction application that stores and manipulates customer data.
+ The program uses the following classes:
+
+1. Address with the following private members and default public methods to input/output data
+a BldgNum  		:string type for building number (e g- 82/7A)
+b. Street Name		: string type for street name (e.g Ballygunge Place)
+c. City 			:String type for city
+d. PIN			: int type for PIN number (e.g. 700019)
+
+2. Customer with the following private data members and default public methods to input/output data
+a. Name  		: String type member for name of person (eg. Avik Roy)
+b. Addr			: Address type member for storing address of the customer
+c.Phone	: String type data for storing 10 digit mobile phone number of  customer
+d. Balance	: Account balance. Balance increases when money is deposited, and decreases when withdrawn
+The class also have the following methods, apart from the default methods
+
+a. Deposit()	: Method to deposit money to account. Increase account balance after every deposit.
+b. Withdrawal()	: Method to withdraw amount from account. Check if account balance is sufficient for the desired withdrawal amount if not, then show message and DO NOT decrease the balance
+3. SavAcc for Savings Account holders publicly derived from Customer class with following private member/method:
+a. SAccNum()	: String type account number of savings account starts with letter S followed by 5 digits E.g(S41423)
+b. Calc Interest()	: This method when called, calculates the interest on the balance amount in the account for a period of 1 year at 6% interest rate and returns the interest calculated
+
+The class also have the following public method, apart from the default input/output methods:
+a. ShowSavAcc()	 : Method to display savings bank account details. The method calls the Calcinterest() method to get and print the interest
+
+4. CurAcc for Current Account holders publicly derived from Customer class, with following private members/methods:
+a.CAccNum()	:Account number of current account starts with letter C followed by 5 digits E.g. C12345
+b. OverDraftAmt()	:The amount that an account holder can get as loan for a month against the balance amount. The method calculates and returns this amount which is 40% of the current balance amount in the account. However, for this to be valid, the minimum amount in the account should be Rs 5,00,000. If the deposit is less than this, then no overdraft is issued and the function returns 0
+The class should also have the following public method, apart from the default methods for input/output operations
+a: ShowSavAcc()	:Method to display current account details The function calls the OverDraft At( ) function and also displays the overdraft amount that the account holder is eligible for
+Within the main code there are two binary data files. First one stores details of Savings Accounts, and the second stores details of Current Accounts.
+INTERACTIVE INTERFACE using switch-case control to work with the following functions:
+1. AddSAcc(): Adds a new savings account (minimum of 10 accounts should be there in the file) to Savings Account file. The new account is appended in order of the account number. Take the integer portion of the account number to get the order (e.g for 525673, take the number 25673).
+2.AddCAcc( ): Adds a new current account (minimum of 10 accounts should be there in the file) to Current Account file.The new account is appended in order of the account number similar to a savings account.
+3. ViewSAcc(): Shows the account number, name balance, and interest given for a savings account. Take account number as input
+4.View CAcc( ):Shows the account number name and balance of current account. Take account number as input.
+5. DepSAcc(): Deposit amount in savings account: Take account number and amount, as user input
+6. DepCAcc(): Deposit amount in current account. Take account number and amount as user input
+7.WithAcc() : Withdraw amount from savings account. Take account number and amount, to withdraw as user input
+8 WithAcc(): Withdraw amount from current account. Take account number and amount to withdraw as user input
+9. DelsAcc(): Delete record for savings account. Take account number to delete as user Input
+10. DelCAcc( ): Delete record for current account Take account number to delete as user Input
